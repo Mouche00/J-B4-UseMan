@@ -12,5 +12,6 @@ public interface EmployeeService {
     void delete(String id);
     Optional<Employee> find(String id);
     List<Employee> getAll();
-    List<Employee> findAll(String post, Department department);
+    List<Employee> findAll(String searchTerm);
+    List<Employee> filter(String post, Department department);
 }

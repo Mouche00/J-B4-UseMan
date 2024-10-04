@@ -12,6 +12,6 @@
         <property name="email" column="email" type="string"/>
         <property name="phone" column="phone" type="string"/>
         <property name="post" column="post" type="string"/>
-        <many-to-one name="department" class="models.Department" column="department_id" not-null="true" />
+        <many-to-one name="department" class="models.Department" column="department_id" not-null="true" cascade="save-update"/>
     </class>
 </hibernate-mapping>

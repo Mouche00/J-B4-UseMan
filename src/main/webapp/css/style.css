@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+.rubik-medium {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.aside {
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 3rem;
+    padding: 2rem 1rem;
+    height: 100%;
+}
+
+.aside-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    width: 2rem;
+}
+
+.aside-title-container {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.aside-title {
+    rotate: 90deg;
+    white-space: nowrap;
+    display: block;
+}
+
+.aside-item svg {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.aside-item .inactive {
+    background-color: #000;
+    border: #000 2px solid;
+    border-radius: 999px;
+}
+
+.main {
+    width: 100%;
+    padding: 2rem;
+    border-radius: 40px;
+    background: #EDF2FB;
+    box-shadow:  -20px 20px 60px #c9ced5,
+    20px -20px 60px #ffffff;
+}
+
+body {
+    background-color: #EDF2FB;
+    display: flex;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+h4 {
+    font-weight: normal;
+    font-size: 15px;
+}

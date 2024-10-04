@@ -57,4 +57,15 @@ public class Employee {
     public void setDepartment(Department department) {
         this.department = department;
     }
+
+    public Employee(String name, String email, String phone, String post, Department department) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.post = post;
+        this.department = department;
+    }
+
+    public Employee() {
+    }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class EmployeeServiceImpl  implements EmployeeService {
-    private EmployeeDAO employeeDAO;
+    private final EmployeeDAO employeeDAO;
     public EmployeeServiceImpl(EmployeeDAO employeeDAO) {
         this.employeeDAO = employeeDAO;
     }
@@ -41,7 +41,12 @@ public class EmployeeServiceImpl  implements EmployeeService {
     }
 
     @Override
-    public List<Employee> findAll(String post, Department department) {
+    public List<Employee> findAll(String searchTerm) {
+        return employeeDAO.findAll(searchTerm);
+    }
+
+    @Override
+    public List<Employee> filter(String post, Department department) {
         List<Employee> employees = employeeDAO.getAll();
         if(post != null) {
             employees = employees.stream().filter(e -> e.getPost().contains(post)).toList();
