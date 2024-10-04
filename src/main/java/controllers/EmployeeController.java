@@ -30,7 +30,13 @@ public class EmployeeController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        switch (request.getServletPath()) {
+        String fullUri = request.getRequestURI();
+        String contextPath = request.getContextPath();
+        String servletPath = request.getServletPath();
+
+        String uriAfterServletUrl = fullUri.substring(contextPath.length() + servletPath.length());
+
+        switch (uriAfterServletUrl) {
             case "/save":
                 save(request, response);
                 break;
@@ -145,6 +151,7 @@ public class EmployeeController extends HttpServlet {
             employees = employeeService.findAll(searchTerm);
         }
         request.setAttribute("employees", employees);
+        request.setAttribute("departments", getDepartments());
         request.getRequestDispatcher("/views/index.jsp").forward(request, response);
     }
 }
